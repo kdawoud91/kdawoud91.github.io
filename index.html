@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khaled W. Dawoud — AI Researcher & Builder</title>
+  <meta name="description" content="Khaled Waleed Dawoud — PhD candidate in Computer Vision at MBZUAI. Research in anomaly detection, VLMs, AIoT, and blockchain. Founder of AI Solve Limited.">
+  <meta name="author" content="Khaled Waleed Dawoud" />
+  <meta property="og:title" content="Khaled W. Dawoud — AI Researcher & Builder" />
+  <meta property="og:description" content="PhD candidate in Computer Vision at MBZUAI. Research in anomaly detection, VLMs, AIoT, and blockchain." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kdawoud91.github.io" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230ea5e9'/><text x='50' y='62' font-size='64' text-anchor='middle' fill='white' font-family='Inter,Arial,sans-serif'>KD</text></svg>">
+  <style>
+    :root{
+      --bg: #0b1220; /* slate-950 */
+      --card: #0f172a; /* slate-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e2e8f0; /* slate-200 */
+      --brand:#0ea5e9; /* sky-500 */
+      --accent:#22c55e; /* green-500 */
+      --ring: rgba(14,165,233,.35);
+    }
+    :root.light{
+      --bg:#ffffff;
+      --card:#f8fafc; /* slate-50 */
+      --muted:#475569; /* slate-600 */
+      --text:#0f172a; /* slate-900 */
+      --ring: rgba(14,165,233,.4);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg); color:var(--text); line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1080px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted) 30%, transparent); z-index:50}
+    nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:.75rem}
+    .logo{width:36px; height:36px; display:grid; place-items:center; border-radius:10px; background:var(--brand); color:white; font-weight:800}
+    .nav-links{display:flex; gap:1rem}
+    .nav-links a{padding:.5rem .75rem; border-radius:10px}
+    .nav-links a:hover{background:color-mix(in oklab, var(--brand) 20%, transparent)}
+    .ghost-btn{display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border:1px solid color-mix(in oklab, var(--brand) 35%, transparent); border-radius:12px}
+    .ghost-btn:hover{border-color:var(--brand); box-shadow:0 0 0 4px var(--ring)}
+    .hero{padding:72px 0 24px}
+    .grid{display:grid; gap:24px}
+    @media (min-width:900px){.grid{grid-template-columns:1.2fr .8fr; align-items:center}}
+    .title{font-size:clamp(1.75rem, 3.2vw, 3rem); line-height:1.15; font-weight:900}
+    .subtitle{font-size:clamp(1rem, 1.4vw, 1.25rem); color:var(--muted)}
+    .pill{display:inline-flex; gap:.5rem; align-items:center; background:color-mix(in oklab, var(--brand) 12%, transparent); border:1px solid color-mix(in oklab, var(--brand) 40%, transparent); color:#e0f2fe; padding:.35rem .6rem; border-radius:999px; font-size:.85rem}
+    .stack{display:flex; flex-wrap:wrap; gap:.6rem}
+    .cta{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1rem; border-radius:12px; border:1px solid transparent; font-weight:600}
+    .btn.primary{background:var(--brand); color:#002233}
+    .btn.secondary{border-color:color-mix(in oklab, var(--brand) 40%, transparent)}
+    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); border-radius:16px; padding:18px}
+    .cards{display:grid; gap:16px}
+    @media (min-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:1040px){.cards{grid-template-columns:repeat(3,1fr)}}
+    section{padding:36px 0}
+    h2{font-size:1.5rem; margin:0 0 12px}
+    h3{margin:.2rem 0 .2rem; font-size:1.05rem}
+    .muted{color:var(--muted)}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.85em; padding:.25em .45em; border-radius:8px; border:1px solid color-mix(in oklab, var(--muted) 30%, transparent)}
+    .list{display:grid; gap:10px}
+    .resume li{margin-left:1rem}
+    footer{padding:24px 0 60px; color:var(--muted)}
+    .tag{display:inline-block; font-size:.8rem; padding:.2rem .5rem; border-radius:999px; border:1px solid color-mix(in oklab, var(--brand) 45%, transparent); margin-right:.4rem}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+    .divider{height:1px; background:color-mix(in oklab, var(--muted) 22%, transparent); margin:12px 0}
+    .nowrap{white-space:nowrap}
+    .pub-title{font-weight:600}
+  </style>
+  <script>
+    // Theme toggle with localStorage
+    const applyTheme=()=>{
+      const mql = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const saved = localStorage.getItem('theme');
+      const light = saved ? saved==='light' : mql;
+      document.documentElement.classList.toggle('light', light);
+      document.querySelector('#theme-label')?.setAttribute('aria-label', light? 'Switch to dark theme' : 'Switch to light theme');
+    };
+    const toggleTheme=()=>{
+      const isLight = document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', isLight?'light':'dark');
+      applyTheme();
+    };
+    window.addEventListener('DOMContentLoaded',()=>{
+      applyTheme();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">KD</div>
+          <div>
+            <strong>Khaled W. Dawoud</strong>
+            <div class="muted" style="font-size:.9rem">AI Researcher • Computer Vision • Builder</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+          <button id="theme-label" class="ghost-btn" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section class="hero">
+      <div class="grid">
+        <div>
+          <div class="stack" aria-hidden="true">
+            <span class="pill">PhD Candidate @ MBZUAI</span>
+            <span class="pill">Computer Vision • Anomaly Detection</span>
+            <span class="pill">Founder — AI Solve Limited</span>
+          </div>
+          <h1 class="title">I build practical AI systems and research robust perception.</h1>
+          <p class="subtitle">My work spans visual anomaly detection, vision-language models, AIoT for smart environments, and trustworthy AI (federated learning & security). I enjoy taking research from idea to deployment — in the lab and in the field.</p>
+          <div class="cta">
+            <a class="btn primary" href="assets/Khaled_Dawoud.pdf" download>
+              <span>Download CV</span>
+            </a>
+            <a class="btn secondary" href="mailto:khaled.dawoud@mbzuai.ac.ae">Email</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/khaled-dawoud" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/kdawoud91" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Focus Areas</h3>
+            <div class="divider"></div>
+            <ul class="list">
+              <li>Vision & VLMs for <strong>anomaly detection</strong> in video and industrial inspection</li>
+              <li><strong>AIoT</strong> for interactive spaces and remote collaboration</li>
+              <li><strong>Model efficiency</strong> — real-time inference, quantization, pruning</li>
+              <li><strong>Trustworthy AI</strong> — privacy, blockchain audit trails, federated learning</li>
+            </ul>
+            <div class="divider"></div>
+            <div>
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">Federated Learning</span>
+              <span class="tag">Blockchain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>I'm a self-motivated researcher currently pursuing a PhD in Artificial Intelligence (Computer Vision) at <span class="nowrap">MBZUAI</span> in Abu Dhabi. Previously, I completed an MSc in AI at MBZUAI and a BSc in Electronics & Telecommunication Engineering at King Abdulaziz University. I have hands-on industry experience as a Project Engineer and a Technical Specialist Engineer, and I enjoy bridging research with real-world deployment.</p>
+        <p>Beyond academia, I founded <strong>AI Solve Limited</strong> in Abu Dhabi, where we build AI-powered branding, websites, and automated marketing systems for businesses.</p>
+        <p class="muted">Based in Masdar City, Abu Dhabi, UAE.</p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="pub-title">SmartSync: Revolutionizing Remote Work with AIoT — Virtual Office Interactivity</div>
+          <div class="muted">Khaled W. Dawoud; Abdulmotaleb El Saddik — Proceedings of the International Conference on Artificial Intelligence of Things (ICAIoT), 2024</div>
+          <div class="divider"></div>
+          <div class="stack">
+            <span class="tag">AIoT</span><span class="tag">HCI</span><span class="tag">Interactive Spaces</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pub-title">Object Detection in Aerial Images: A Case Study on Performance Improvement</div>
+          <div class="muted">A. Khan; M. U. Kattak; <strong>K. W. Dawoud</strong> — Proceedings of ICAIoT, 2022</div>
+          <div class="divider"></div>
+          <div class="stack">
+            <span class="tag">Object Detection</span><span class="tag">Aerial</span><span class="tag">Computer Vision</span>
+          </div>
+        </article>
+      </div>
+      <p class="muted" style="margin-top:8px">*Add DOIs, PDFs, or code links as available.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>AI-Powered Dates Classification & Quality Grading</h3>
+          <p>Production-facing system to classify UAE date varieties and assess quality factors (peeling, infestation, molding). Built with VLMs and ViTs, deployed as a web app with real-time evaluation and ground-truth verification UI.</p>
+          <div class="stack"><span class="tag">VLM</span><span class="tag">ViT</span><span class="tag">Azure</span><span class="tag">Web App</span></div>
+        </article>
+        <article class="card">
+          <h3>Video Anomaly Detection with Autoencoders & YOLOv8</h3>
+          <p>Three-autoencoder pipeline (forward/backward motion + appearance) with instance segmentation for pixel-wise anomaly localization; explored test-time tuning and VLM-driven descriptions for frame-level anomaly scoring.</p>
+          <div class="stack"><span class="tag">Autoencoders</span><span class="tag">Segmentation</span><span class="tag">TTA</span></div>
+        </article>
+        <article class="card">
+          <h3>SmartSync — AIoT Interactive Office</h3>
+          <p>Virtual office experience enabling remote interactivity via sensors & AI; focuses on presence, context awareness, and collaborative cues.</p>
+          <div class="stack"><span class="tag">AIoT</span><span class="tag">Edge</span><span class="tag">HCI</span></div>
+        </article>
+        <article class="card">
+          <h3>Blockchain Emissions Tracker (Cisco ME Sustainability Challenge — Top 4)</h3>
+          <p>System to estimate pollution emissions and store them on a transparent, auditable blockchain ledger; I led the blockchain architecture & development.</p>
+          <div class="stack"><span class="tag">Blockchain</span><span class="tag">Sustainability</span></div>
+        </article>
+        <article class="card">
+          <h3>Financial Markets Next-Day Close Prediction</h3>
+          <p>Research prototypes using deep learning for predicting next-day closing prices; emphasis on data quality and robust evaluation.</p>
+          <div class="stack"><span class="tag">Time Series</span><span class="tag">DL</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Education</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Experience</h3>
+          <ul class="resume">
+            <li><strong>Project Engineer</strong> — Al-Taknia for Telecommunication (Jun 2018 – Aug 2020)</li>
+            <li><strong>Technical Specialist Engineer</strong> — Solutions by STC (Apr 2015 – Apr 2017)</li>
+          </ul>
+          <div class="divider"></div>
+          <h3>Achievements</h3>
+          <ul class="resume">
+            <li>Top 4 final team — Cisco Middle East Sustainability Challenge @ Expo 2020 (Apr 2022)</li>
+            <li>Employee Recognition — STC (2016)</li>
+          </ul>
+          <div class="divider"></div>
+          <h3>Certifications</h3>
+          <ul class="resume">
+            <li>ChatGPT Prompt Engineering for Developers — DeepLearning.AI (Aug 2024)</li>
+            <li>Python for Data Science, AI & Development — IBM (Jul 2021)</li>
+            <li>IEEE Training Workshops</li>
+            <li>Quality Based Design of Engineering Systems — KAU</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Education</h3>
+          <ul class="resume">
+            <li><strong>PhD, Artificial Intelligence (Computer Vision)</strong> — MBZUAI, Abu Dhabi (Aug 2023 – Present)</li>
+            <li><strong>MSc, Artificial Intelligence (Computer Vision)</strong> — MBZUAI, Abu Dhabi (Aug 2021 – May 2023)</li>
+            <li><strong>BSc, Electrical Engineering (Electronics & Telecom)</strong> — King Abdulaziz University, Jeddah (2010 – 2015)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Open to collaborations in computer vision, anomaly detection, and applied AI deployments in industry. The fastest way to reach me is email.</p>
+        <ul class="resume">
+          <li>Email: <a href="mailto:khaled.dawoud@mbzuai.ac.ae">khaled.dawoud@mbzuai.ac.ae</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/khaled-dawoud" target="_blank" rel="noopener">linkedin.com/in/khaled-dawoud</a></li>
+          <li>GitHub: <a href="https://github.com/kdawoud91" target="_blank" rel="noopener">github.com/kdawoud91</a></li>
+          <li>Location: Masdar City, Abu Dhabi, UAE</li>
+        </ul>
+        <p class="muted">Optional: publish phone number only if you want inbound calls — it is currently omitted on purpose for privacy.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quick Links</h2>
+      <div class="stack">
+        <a class="ghost-btn" href="#publications">Publications</a>
+        <a class="ghost-btn" href="#projects">Projects</a>
+        <a class="ghost-btn" href="#experience">Experience</a>
+        <a class="ghost-btn" href="assets/Khaled_Dawoud.pdf" download>CV (PDF)</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="divider"></div>
+      <div class="container" style="padding:0">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+          <div>© <span id="year"></span> Khaled W. Dawoud • <span class="muted">Made with plain HTML/CSS/JS</span></div>
+          <div class="muted">Hosted on GitHub Pages — <a href="https://kdawoud91.github.io">kdawoud91.github.io</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      })
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khaled Waleed Dawoud",
+    "url": "https://kdawoud91.github.io",
+    "jobTitle": "PhD Candidate in Artificial Intelligence (Computer Vision)",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Mohamed bin Zayed University of Artificial Intelligence"
+    },
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"MBZUAI"},
+      {"@type":"CollegeOrUniversity","name":"King Abdulaziz University"}
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/khaled-dawoud",
+      "https://github.com/kdawoud91"
+    ],
+    "knowsAbout": ["Computer Vision","Anomaly Detection","AIoT","Blockchain","Federated Learning","Vision-Language Models"]
+  }
+  </script>
+</body>
+</html>
