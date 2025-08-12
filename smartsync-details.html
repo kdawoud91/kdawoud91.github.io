@@ -100,24 +100,14 @@
         <article class="card">
           <h2>Abstract (plain‑English)</h2>
           <p>Remote work pushed people to turn homes into offices. <strong>SmartSync</strong> connects virtual meeting platforms with the physical workspace using AIoT. The system reads meeting state (e.g., start, participants joined) and <em>automates</em> office peripherals—lighting, fan, and RGB indicators—while a lightweight agent notifies the host (emails, sounds) about key events. The goal is simple: make meetings smoother, more comfortable, and less manual for the user.</p>
+          <h2>Motivation</h2>
+          <p>The shift to remote work has created a clear need for workspaces that adapt automatically to virtual meetings. While platforms like Zoom evolved rapidly in software features, the <em>physical</em> environment remains disconnected. AIoT closes this gap by combining AI decision‑making with IoT sensing and actuation so rooms respond to meeting events. The result is improved comfort, fewer manual adjustments, and smoother collaboration—addressing a key shortcoming in current remote‑work setups.</p>
           <h2>Key Contributions</h2>
           <ul>
-            <li>Automatic control of office peripherals (lamp, fan, RGB LEDs) based on meeting lifecycle.</li>
-            <li>A basic language/notification agent that informs the host about conditions (e.g., all participants present).</li>
-            <li>Attendance monitoring with reminder emails for late participants.</li>
+            <li>Automatic control of office peripherals (lamp, fan, RGB LEDs) driven by meeting lifecycle.</li>
+            <li>Lightweight agent for notifications and attendance awareness (welcome/reminder emails, "all present" signal).</li>
+            <li>End‑to‑end prototype linking a web‑conferencing API to physical devices in real time.</li>
           </ul>
-          <p class="muted">These points summarize the core contributions described in the paper.</p>
-        </article>
-        <article class="card" style="margin-top:12px">
-          <h2>Motivation</h2>
-          <p>Even with modern web‑conferencing, home environments still cause friction: lighting, temperature, and awareness (who joined/when to start). SmartSync shows how AIoT can bridge software and the physical room so the meeting space <em>adapts</em> to the session instead of the other way around.</p>
-          <details style="margin-top:.5rem"><summary>Context: gaps in current tools</summary>
-            <ul>
-              <li>Most enhancements focus on software plugins; physical environment control is underexplored.</li>
-              <li>Users manually manage lighting/comfort and track attendance, which is disruptive.</li>
-              <li>Zoom APIs expose useful signals (participants list, meeting status) that are rarely used for room automation.</li>
-            </ul>
-          </details>
         </article>
       </section>
 
@@ -185,7 +175,7 @@ On all joined: notify host (sound) that meeting can begin</code></pre>
           </ul>
           <h2>Limitations & Future Work</h2>
           <ul>
-            <li>Prototype uses wired connections; wireless (e.g., Bluetooth) would suit real rooms better.</li>
+            <li>Prototype wiring; a wireless design (e.g., BLE/Wi‑Fi modules) suits real rooms better.</li>
             <li>Educational‑grade components; smaller/cheaper boards (e.g., Nano‑class) are sufficient.</li>
             <li>Planned: add vision cues (e.g., detect distraction/sleep) to trigger helpful nudges.</li>
           </ul>
