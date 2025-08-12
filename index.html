@@ -36,7 +36,6 @@
     .subtitle{font-size:clamp(1rem,1.4vw,1.25rem);color:var(--muted)}
     .pill{display:inline-flex;gap:.5rem;align-items:center;background:color-mix(in oklab, var(--brand) 12%, transparent);border:1px solid color-mix(in oklab, var(--brand) 40%, transparent);color:#e0f2fe;padding:.35rem .6rem;border-radius:999px;font-size:.85rem}
     .stack{display:flex;flex-wrap:wrap;gap:.6rem}
-    /* High-contrast style for the quote pill */
     .pill.quote{background:var(--pill-bg);border-color:var(--pill-border);color:var(--pill-text);font-weight:700;box-shadow:0 6px 20px -8px color-mix(in oklab, var(--brand) 60%, transparent)}
     .pill.quote::before{content:"\201C";opacity:.9}
     .pill.quote::after{content:"\201D";opacity:.9}
@@ -61,6 +60,10 @@
     .divider{height:1px;background:color-mix(in oklab, var(--muted) 22%, transparent);margin:12px 0}
     .nowrap{white-space:nowrap}
     .pub-title{font-weight:600}
+    /* clickable publication card */
+    .card-link{display:block; color:inherit; text-decoration:none; cursor:pointer}
+    .card-link:focus-visible{outline:3px solid var(--brand); outline-offset:4px; border-radius:16px}
+    .card-link:hover{box-shadow:0 0 0 3px var(--ring)}
   </style>
   <script>
     const applyTheme=()=>{const mql=window.matchMedia('(prefers-color-scheme: light)').matches;const saved=localStorage.getItem('theme');const light=saved?saved==='light':mql;document.documentElement.classList.toggle('light',light);document.querySelector('#theme-label')?.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme')};
@@ -145,14 +148,15 @@
     <section id="publications">
       <h2>Publications</h2>
       <div class="cards">
-        <article class="card">
+        <!-- Clickable publication card -->
+        <a href="smartsync-details.html" class="card card-link">
           <div class="pub-title">SmartSync: Revolutionizing Remote Work with AIoT — Virtual Office Interactivity</div>
           <div class="muted">Khaled Dawoud; Abdulmotaleb El Saddik — Proceedings of the International Conference on Artificial Intelligence of Things (ICAIoT), 2024</div>
           <div class="divider"></div>
           <div class="stack">
             <span class="tag">AIoT</span><span class="tag">HCI</span><span class="tag">Interactive Spaces</span>
           </div>
-        </article>
+        </a>
         <article class="card">
           <div class="pub-title">Object Detection in Aerial Images: A Case Study on Performance Improvement</div>
           <div class="muted">A. Khan; M. U. Kattak; <strong>K. Dawoud</strong> — Proceedings of ICAIoT, 2022</div>
@@ -283,5 +287,82 @@
     "knowsAbout": ["Computer Vision","Anomaly Detection","AIoT","Blockchain","Federated Learning","Vision-Language Models"]
   }
   </script>
+
+  <!-- ================= OPTIONAL SECOND FILE =================
+       Save the following as smartsync-details.html in the same folder.
+  ----------------------------------------------------------- -->
+  <!--
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartSync — Publication Details</title>
+    <meta name="description" content="Details of SmartSync: Revolutionizing Remote Work with AIoT — Virtual Office Interactivity.">
+    <meta name="theme-color" content="#0ea5e9" />
+    <style>
+      :root{--bg:#0b1220;--card:#0f172a;--muted:#94a3b8;--text:#e2e8f0;--brand:#0ea5e9;--ring:rgba(14,165,233,.35)}
+      :root.light{--bg:#ffffff;--card:#f8fafc;--muted:#475569;--text:#0f172a}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--text)}
+      .container{max-width:900px;margin:0 auto;padding:24px}
+      a{color:inherit}
+      .back{display:inline-flex;gap:.5rem;align-items:center;padding:.5rem .75rem;border:1px solid color-mix(in oklab, var(--brand) 40%, transparent);border-radius:10px;text-decoration:none}
+      .card{background:var(--card);border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);border-radius:16px;padding:18px;margin-top:16px}
+      h1{font-size:clamp(1.4rem,2.6vw,2.1rem);margin:.2rem 0}
+      h2{font-size:1.1rem;margin:1.5rem 0 .6rem}
+      .muted{color:var(--muted)}
+      .stack{display:flex;flex-wrap:wrap;gap:.5rem}
+      .tag{display:inline-block;font-size:.8rem;padding:.2rem .5rem;border-radius:999px;border:1px solid color-mix(in oklab, var(--brand) 45%, transparent)}
+      .divider{height:1px;background:color-mix(in oklab, var(--muted) 22%, transparent);margin:12px 0}
+    </style>
+    <script>
+      const applyTheme=()=>{const mql=window.matchMedia('(prefers-color-scheme: light)').matches;const saved=localStorage.getItem('theme');const light=saved?saved==='light':mql;document.documentElement.classList.toggle('light',light)};
+      window.addEventListener('DOMContentLoaded',applyTheme);
+    </script>
+  </head>
+  <body>
+    <main class="container">
+      <a href="index.html#publications" class="back">← Back</a>
+
+      <article class="card">
+        <h1>SmartSync: Revolutionizing Remote Work with AIoT — Virtual Office Interactivity</h1>
+        <p class="muted">Khaled Dawoud; Abdulmotaleb El Saddik — ICAIoT 2024</p>
+        <div class="divider"></div>
+        <div class="stack">
+          <span class="tag">AIoT</span><span class="tag">HCI</span><span class="tag">Interactive Spaces</span>
+        </div>
+
+        <h2>Abstract</h2>
+        <p>Write a short, plain‑English summary of the problem, your approach, and the main result/impact.</p>
+
+        <h2>Motivation</h2>
+        <p>Why this matters. The gaps in existing tools. The opportunity.</p>
+
+        <h2>Method</h2>
+        <ul>
+          <li>System architecture (sensors, edge devices, cloud)</li>
+          <li>Core AI models and training data</li>
+          <li>Interaction model / UX considerations</li>
+        </ul>
+
+        <h2>Results</h2>
+        <ul>
+          <li>Key quantitative/qualitative outcomes</li>
+          <li>Latency, reliability, and user feedback</li>
+        </ul>
+
+        <h2>Artifacts</h2>
+        <ul>
+          <li><a href="#">PDF</a> (add when available)</li>
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Code</a></li>
+          <li>DOI: <em>add DOI here</em></li>
+        </ul>
+      </article>
+    </main>
+  </body>
+  </html>
+  -->
 </body>
 </html>
