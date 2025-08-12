@@ -35,11 +35,11 @@
     .title{font-size:clamp(1.75rem,3.2vw,3rem);line-height:1.15;font-weight:900}
     .subtitle{font-size:clamp(1rem,1.4vw,1.25rem);color:var(--muted)}
     .pill{display:inline-flex;gap:.5rem;align-items:center;background:color-mix(in oklab, var(--brand) 12%, transparent);border:1px solid color-mix(in oklab, var(--brand) 40%, transparent);color:#e0f2fe;padding:.35rem .6rem;border-radius:999px;font-size:.85rem}
+    .stack{display:flex;flex-wrap:wrap;gap:.6rem}
     /* High-contrast style for the quote pill */
     .pill.quote{background:var(--pill-bg);border-color:var(--pill-border);color:var(--pill-text);font-weight:700;box-shadow:0 6px 20px -8px color-mix(in oklab, var(--brand) 60%, transparent)}
-    .pill.quote::before{content:"C";opacity:.9}
-    .pill.quote::after{content:"D";opacity:.9}
-    .stack{display:flex;flex-wrap:wrap;gap:.6rem}
+    .pill.quote::before{content:"\201C";opacity:.9}
+    .pill.quote::after{content:"\201D";opacity:.9}
     .cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
     .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-radius:12px;border:1px solid transparent;font-weight:600}
     .btn.primary{background:var(--brand);color:#002233}
@@ -98,8 +98,6 @@
         <div>
           <div class="stack" aria-hidden="true">
             <span class="pill quote">AI is cutting-edge; use it wisely, and you’ll have the edge.</span>
-            <span class="pill">Computer Vision • Anomaly Detection</span>
-            <span class="pill">Founder — AI Solve Limited</span>
           </div>
           <h1 class="title">I build practical AI systems and research robust perception.</h1>
           <p class="subtitle">My work spans video understanding, visual detection, vision-language models, AIoT for smart environments, and trustworthy AI (federated learning & security). I enjoy taking research from idea to deployment — in the lab and in the field.</p>
