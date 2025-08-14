@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FusedVision — Practical Anomaly Detection (CVPRW 2025)</title>
-  <meta name="description" content="FusedVision: a knowledge‑infusing approach for practical anomaly detection in real‑world videos (CVPR Workshops 2025)." />
+  <meta name="description" content="FusedVision: a knowledge-infusing approach for practical anomaly detection in real-world videos (CVPR Workshops 2025)." />
   <meta name="theme-color" content="#7c3aed" />
   <style>
     :root{--bg:#0b1220;--card:#0f172a;--muted:#94a3b8;--text:#e2e8f0;--brand:#7c3aed;--ring:rgba(124,58,237,.35)}
@@ -26,12 +26,6 @@
     .tab[aria-selected="true"]{background:var(--brand);color:#fff;border-color:transparent}
     .tabpanels > section{display:none}
     .tabpanels > section[aria-hidden="false"]{display:block}
-    /* Demo */
-    .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .state{display:grid;gap:8px}
-    .state .row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.03);border:1px solid color-mix(in oklab, var(--muted) 20%, transparent);border-radius:12px;padding:10px}
-    .led{width:14px;height:14px;border-radius:50%;box-shadow:0 0 16px 2px rgba(0,0,0,.25)}
-    .actions{display:flex;flex-wrap:wrap;gap:.5rem}
     .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem .85rem;border-radius:12px;border:1px solid color-mix(in oklab, var(--brand) 40%, transparent);cursor:pointer}
     .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
     details{border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);border-radius:12px;padding:10px}
@@ -64,14 +58,13 @@
     <a href="index.html#publications" class="back">← Back</a>
 
     <header class="card" style="margin-top:12px">
-      <h1>FusedVision: A Knowledge‑Infusing Approach for Practical Anomaly Detection in Real‑world Videos</h1>
+      <h1>FusedVision: A Knowledge-Infusing Approach for Practical Anomaly Detection in Real-world Videos</h1>
       <p class="muted">CVPR Workshops, 2025 • Khaled Dawoud; Muhammad Zaigham Zaheer; Mustaqeem Khan; Karthik Nandakumar; Abdulmotaleb El Saddik; Muhammad Haris Khan</p>
-      <div class="stack" style="margin-top:.5rem"><span class="tag">Anomaly Detection</span><span class="tag">Computer Vision</span><span class="tag">Knowledge Infusion</span><span class="tag">Object‑centric</span></div>
+      <div class="stack" style="margin-top:.5rem"><span class="tag">Anomaly Detection</span><span class="tag">Computer Vision</span><span class="tag">Knowledge Infusion</span><span class="tag">Object-centric</span></div>
       <div class="divider"></div>
       <div class="tabs" role="tablist" aria-label="FusedVision sections">
         <button class="tab" role="tab" aria-selected="true">Overview</button>
         <button class="tab" role="tab">Method</button>
-        <button class="tab" role="tab">Demo</button>
         <button class="tab" role="tab">Results</button>
         <button class="tab" role="tab">Artifacts</button>
       </div>
@@ -81,19 +74,22 @@
       <!-- Overview -->
       <section aria-hidden="false">
         <article class="card">
-          <h2>Abstract (plain‑English)</h2>
-          <p>Object‑centric video anomaly detection isolates objects in each frame and learns what looks normal. <strong>FusedVision</strong> augments this with a branched design that combines an object detector and a normalcy model, then <em>infuses knowledge about expected anomalies</em> to guide fusion and scoring. The goal is practical deployment: higher precision and better robustness under everyday shifts (crowds, lighting, clutter) without sacrificing recall.</p>
+          <h2>Abstract (plain-English)</h2>
+          <p>Object-centric video anomaly detection isolates objects in each frame and learns what looks normal. <strong>FusedVision</strong> augments this with a branched design that combines an object detector and a normalcy model, then <em>infuses knowledge about expected anomalies</em> to guide fusion and scoring. The goal is practical deployment: higher precision and better robustness under everyday shifts (crowds, lighting, clutter) without sacrificing recall.</p>
           <details><summary>Abstract (from paper)</summary>
-            <p>Object‑centric approaches have gained attention as effective one‑class classification methods for detecting anomalies in videos... Our proposed approach noticeably outperforms existing methods, demonstrating its effectiveness across contexts. <em>Source: CVPRW 2025 paper.</em></p>
+            <p>Object-centric approaches have gained attention as effective one-class classification methods for detecting anomalies in videos... Our proposed approach noticeably outperforms existing methods, demonstrating its effectiveness across contexts. <em>Source: CVPRW 2025 paper.</em></p>
           </details>
+
           <h2>Motivation</h2>
-          <p>Deployed video safety detection systems face challenges that controlled lab conditions rarely capture such as dynamic backgrounds, shifting illumination, and unpredictable crowd behaviors. Conventional object-centric models rely solely on learned representations of "normal" patterns, making them vulnerable to false alarms or missed anomalies in changing environments. FusedVision mitigates this by infusing explicit knowledge of plausible anomalies into the detection pipeline, enabling more consistent, context-aware, and operationally relevant performance in real-world settings.</p>
+          <p>Deployed video safety detection systems face challenges that controlled lab conditions rarely capture—dynamic backgrounds, shifting illumination, and unpredictable crowd behaviors. Conventional object-centric models rely solely on learned representations of “normal,” making them vulnerable to false alarms or missed anomalies as conditions change. FusedVision mitigates this by infusing explicit knowledge of plausible anomalies into the detection pipeline, yielding more consistent, context-aware, operational performance in real-world settings.</p>
+
           <h2>Key Contributions</h2>
           <ul>
             <li>Branched architecture coupling an <strong>object detector</strong> with a <strong>normalcy model</strong> for complementary cues.</li>
-            <li><strong>Knowledge‑infused fusion</strong> and <strong>anomaly scoring</strong> tailored to practical deployments.</li>
-            <li><strong>Plug‑in design</strong>: integrated with multiple recent methods; validated on ShanghaiTech, Avenue, and UCSD Ped2.</li>
+            <li><strong>Knowledge-infused fusion</strong> and <strong>anomaly scoring</strong> tailored to practical deployments.</li>
+            <li><strong>Plug-in design</strong>: integrates with recent methods; validated on ShanghaiTech, Avenue, and UCSD Ped2.</li>
           </ul>
+
           <div class="divider"></div>
           <h2>Video Demo</h2>
           <video id="demo-video-overview" width="100%" controls poster="assets/fusedvision-thumb.jpg">
@@ -108,12 +104,36 @@
       <section aria-hidden="true">
         <article class="card">
           <h2>System Architecture</h2>
-          <p>FusedVision follows an object‑centric pipeline augmented with knowledge infusion:</p>
+          <p>FusedVision follows an object-centric pipeline augmented with knowledge infusion:</p>
           <div class="kpi">
-            <div class="card"><strong>Perception</strong><div class="divider"></div><ul><li>Object detector extracts instance crops and metadata</li><li>Normalcy model learns typical appearance/motion</li></ul></div>
-            <div class="card"><strong>Knowledge Layer</strong><div class="divider"></div><ul><li>Domain priors about anomaly types</li><li> inject priors into object detector</li></ul></div>
-            <div class="card"><strong>Fusion & Scoring</strong><div class="divider"></div><ul><li>Branched fusion of detector + normalcy autoencoders(NLMs)</li><li>Calibrated anomaly scoring for frame/object level</li></ul></div>
+            <div class="card">
+              <strong>Perception</strong>
+              <div class="divider"></div>
+              <ul>
+                <li>Object detector extracts instance crops and metadata</li>
+                <li>Normalcy model learns typical appearance/motion</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Knowledge Layer</strong>
+              <div class="divider"></div>
+              <ul>
+                <li>Domain priors about anomaly types</li>
+                <li>Adapters inject priors into detector/normalcy features</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Fusion & Scoring</strong>
+              <div class="divider"></div>
+              <ul>
+                <li>Branched fusion of detector + normalcy signals</li>
+                <li>Calibrated anomaly scoring for frame/object level</li>
+              </ul>
+            </div>
           </div>
+        </article>
+      </section>
+
       <!-- Results -->
       <section aria-hidden="true">
         <article class="card">
@@ -124,7 +144,8 @@
             <li>Consistent gains when plugged into different baselines.</li>
           </ul>
           <p class="muted">Datasets reported in the paper: ShanghaiTech, Avenue, UCSD Ped2.</p>
-          <h2>Limitations & Future Work</h2>
+
+          <h2>Limitations &amp; Future Work</h2>
           <ul>
             <li>Quality of priors matters; poor priors may bias scores.</li>
             <li>Future: automatic prior discovery and adaptive calibration.</li>
@@ -144,7 +165,7 @@
           <div class="divider"></div>
           <details>
             <summary>Citation</summary>
-            <pre id="cite"><code>Dawoud, K., Zaheer, M. Z., Khan, M., Nandakumar, K., El Saddik, A., & Khan, M. H. (2025). FusedVision: A Knowledge‑Infusing Approach for Practical Anomaly Detection in Real‑world Videos. In CVPR Workshops.</code></pre>
+            <pre id="cite"><code>Dawoud, K., Zaheer, M. Z., Khan, M., Nandakumar, K., El Saddik, A., &amp; Khan, M. H. (2025). FusedVision: A Knowledge-Infusing Approach for Practical Anomaly Detection in Real-world Videos. In CVPR Workshops.</code></pre>
             <button class="btn copy" data-copy="cite">Copy</button>
           </details>
         </article>
