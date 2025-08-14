@@ -111,8 +111,8 @@
           <p>FusedVision follows an object‑centric pipeline augmented with knowledge infusion:</p>
           <div class="kpi">
             <div class="card"><strong>Perception</strong><div class="divider"></div><ul><li>Object detector extracts instance crops and metadata</li><li>Normalcy model learns typical appearance/motion</li></ul></div>
-            <div class="card"><strong>Knowledge Layer</strong><div class="divider"></div><ul><li>Domain priors about anomaly types</li><li>Adapters to inject priors into feature space</li></ul></div>
-            <div class="card"><strong>Fusion & Scoring</strong><div class="divider"></div><ul><li>Branched fusion of detector + normalcy signals</li><li>Calibrated anomaly scoring for frame/object level</li></ul></div>
+            <div class="card"><strong>Knowledge Layer</strong><div class="divider"></div><ul><li>Domain priors about anomaly types</li><li> inject priors into object detector</li></ul></div>
+            <div class="card"><strong>Fusion & Scoring</strong><div class="divider"></div><ul><li>Branched fusion of detector + normalcy autoencoders(NLMs)</li><li>Calibrated anomaly scoring for frame/object level</li></ul></div>
           </div>
           <h2>Algorithms</h2>
           <details open>
