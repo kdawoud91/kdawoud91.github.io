@@ -114,56 +114,6 @@
             <div class="card"><strong>Knowledge Layer</strong><div class="divider"></div><ul><li>Domain priors about anomaly types</li><li> inject priors into object detector</li></ul></div>
             <div class="card"><strong>Fusion & Scoring</strong><div class="divider"></div><ul><li>Branched fusion of detector + normalcy autoencoders(NLMs)</li><li>Calibrated anomaly scoring for frame/object level</li></ul></div>
           </div>
-          <h2>Algorithms</h2>
-          <details open>
-            <summary>High‑level loop</summary>
-            <pre id="algo-loop"><code>for frame in video:
-  objs = detect_objects(frame)
-  z_norm = normalcy_features(objs)
-  z_know = knowledge_adapter(objs, priors)
-  s = fusion_and_score(z_norm, z_know)
-  update_timeline(frame_idx, s)</code></pre>
-            <button class="btn copy" data-copy="algo-loop">Copy</button>
-          </details>
-          <details style="margin-top:.5rem">
-            <summary>Knowledge infusion examples</summary>
-            <ul>
-              <li>Rules/priors on object interactions (e.g., person+bike on sidewalk)</li>
-              <li>Context‑aware thresholds conditioned on time/place</li>
-              <li>Lightweight adapters mapping priors to feature shifts</li>
-            </ul>
-          </details>
-        </article>
-      </section>
-
-      <!-- Demo -->
-      <section aria-hidden="true">
-        <article class="card">
-          <h2>Interactive Demo (simulated)</h2>
-          <p>Toggle knowledge infusion to see its qualitative impact on the anomaly score.</p>
-          <div class="demo-grid">
-            <div class="state">
-              <div class="row"><span>Knowledge Layer</span><strong id="kstate">Off</strong></div>
-              <div class="row"><span>Anomaly Score</span><strong id="score">0.21</strong></div>
-            </div>
-            <div class="actions">
-              <button class="btn primary" id="toggle">Toggle Knowledge</button>
-              <button class="btn" id="reset">Reset</button>
-            </div>
-          </div>
-          <script>
-            (function(){
-              const k=document.getElementById('kstate');
-              const s=document.getElementById('score');
-              let on=false; let base=0.21;
-              document.getElementById('toggle').onclick=()=>{on=!on;k.textContent=on?'On':'Off';s.textContent=(on? (base*1.35).toFixed(2):(base).toFixed(2));};
-              document.getElementById('reset').onclick=()=>{on=false;k.textContent='Off';s.textContent=base.toFixed(2)};
-            })();
-          </script>
-          <p class="muted" style="margin-top:.6rem">Illustrative UI; for real data and plots, see the paper and code.</p>
-        </article>
-      </section>
-
       <!-- Results -->
       <section aria-hidden="true">
         <article class="card">
